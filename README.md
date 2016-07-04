@@ -11,9 +11,11 @@ Hi this project is to create a simple robot using the following parts
 - The latest version of Raspbian, downloaded from the [Raspberry Pi Website](https://www.raspberrypi.org/downloads/)
 - A Picon Zero board from 4tronix
 - A McRoboFace board from 4tronix
+- An HC-SR04 Ultraonic Sensor
 - 2 x Micro gear metal motors
 - A Chassis of your choosing.
 - A power supply with enough power for the Pi, Motors and McRoboFace
+- A handful of jumper wires (Female to Female)
 - An Internet connection to complete the software installation
 
 ## Hardware Installtion
@@ -52,12 +54,14 @@ If all is well, you will see the Picon Zero showing up as address 22
 
 The Picon Zero is provided with a python library which allows very simple access to all the features in an intuitive and consistent manner. A separate small library handles the ultrasonic which is on a GPIO pin and not part of the onboard micro-controller.
 
-Download the Picon Zero library itself  from here
 
 You can also download directly both libraries and example files by typing the following into the terminal window. Open LXTerminal and type:
 
+```
 wget http://4tronix.co.uk/piconz.sh -O piconz.sh
 bash piconz.sh
+```
+
 That will create a piconzero folder in your home folder, with the libraries and example files:
 
 - piconzero.py  library module for Picon Zero
@@ -71,3 +75,6 @@ That will create a piconzero folder in your home folder, with the libraries and 
 - pixelTest.py  flashes all the attached neopixels from White to Off and back again
 - servoTest.py uses the arrow keys to move 2 servos (pan and tilt) and the G, H keys to move a third servo (grabber claw)
 
+Use the motorTest.py and sonarTest.py files to test that your motors and sensor are working.
+
+Full project instructions as available from [bigl.es](http://bigl.es)
