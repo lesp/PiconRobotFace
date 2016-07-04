@@ -16,6 +16,9 @@ A Chassis of your choosing.
 A power supply with enough power for the Pi, Motors and McRoboFace
 An Internet connection to complete the software installation
 
+## Hardware Installtion
+Attach the Picon Zero to all 40 of the GPIO pins and ensure that the board sits neatly atop of the Raspberry Pi.
+
 ## Software Installation 
 
 The Picon Zero is an I2C device, so you must ensure that your Raspberry Pi is setup to use I2C and smbus correctly:
@@ -24,12 +27,22 @@ In a Terminal type the following
 ```
 sudo apt update && sudo apt install python-smbus python3-smbus python-dev python3-dev
 ```
+
+Next we need to edit the config.txt file, in the Terminal type
+```
 sudo nano /boot/config.txt
-and add the following 2 lines to the end of the file:
+```
+Now add the following 2 lines to the *end* of the file:
+```
 dtparam=i2c1=on
 dtparam=i2c_arm=on
+```
+
 Press <ctrl-x> and accept the default prompts to save the file
+Now in the terminal we need to reboot, type the following.
+```
 sudo reboot
+```
 Plug the Picon Zero onto the Pi and run
 
 i2cdetect -y 1
