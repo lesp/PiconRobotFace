@@ -21,9 +21,9 @@ An Internet connection to complete the software installation
 The Picon Zero is an I2C device, so you must ensure that your Raspberry Pi is setup to use I2C and smbus correctly:
 
 In a Terminal type the following
-'''
+```
 sudo apt update && sudo apt install python-smbus python3-smbus python-dev python3-dev
-'''
+```
 sudo nano /boot/config.txt
 and add the following 2 lines to the end of the file:
 dtparam=i2c1=on
